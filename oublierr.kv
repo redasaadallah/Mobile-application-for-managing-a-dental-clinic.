@@ -1,0 +1,69 @@
+<OublierApp>:
+    md_bg_color: 240/255,240/255,240/255,1
+
+    MDBoxLayout:
+        md_bg_color: 0/255,255/255,255/255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:15
+    MDIcon:
+        icon:"account-question-outline"
+        font_size:90
+        color: 128/255,0/255,128/255,1
+        pos_hint:{'center_x':0.5,'center_y':.7}
+    MDLabel:
+        text:"[u]Entrer votre Email:[/u]"
+        pos_hint:{'center_x':0.3,'center_y':.6}
+        halign:"center"
+        markup:True
+    MDTextField:
+        id:em
+        hint_text:"Email"
+        mode:"rectangle"
+        pos_hint:{'center_x':0.5,'center_y':.53}
+        size_hint:0.8,0.09
+    MDRectangleFlatIconButton:
+
+        text:"Envoyer"
+        font_style:"H6"
+        icon:"send"
+        font_size:14
+        pos_hint:{'center_x':0.5,'center_y':.42}
+        on_release: root.Envoyer()
+    MDProgressBar:
+        pos_hint:{'center_x':0.5,'center_y':.35}
+        size_hint:0.7,0.005
+        value: 100
+        color: app.theme_cls.accent_color
+    MDLabel:
+        text:"Souhaitez-vous créer un nouveau compte ?"
+        pos_hint:{'center_x':0.5,'center_y':.3}
+        halign:"center"
+        bold:True
+    MDRaisedButton:
+        text:"S'inscrire"
+        pos_hint:{'center_x':0.5,'center_y':.23}
+        on_release: 
+            app.root.current='sinscrire'
+            app.root.transition.duration=0
+    MDBoxLayout:
+		md_bg_color: 0/255,255/255,255/255,1
+		size_hint: 1, 0.1
+		pos_hint: {'center_x': 0.5,'center_y': 0}
+		radius:15
+    
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.Oublier_back()
+    MDIconButton:
+        icon:"menu-open"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.Oublier_back()

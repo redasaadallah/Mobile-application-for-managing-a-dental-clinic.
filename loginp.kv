@@ -1,0 +1,101 @@
+<OwnApp>:
+    md_bg_color: 240/255,240/255,240/255,1
+	MDBoxLayout:
+        md_bg_color: 0,0,1,1
+        size_hint: 1, 1.1
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:100
+    MDLabel:
+        text:"Login"
+        underline_width: 2
+        pos_hint: {'center_x': 0.5,'center_y': 0.85}
+        halign:"center"
+        bold:True
+        color: 1 , 1 , 1 , 1
+        font_size:40
+    MDTextField:
+
+        id:username_field
+        mode:'round'
+        icon_right:'email'
+        on_text_validate: root.focus_next_text_input()
+        hint_text:"Email"
+        pos_hint: {'center_x': 0.5,'center_y': 0.7}
+        size_hint:0.9,0.06
+        padding: [dp(55), dp(55), dp(55), dp(55)]
+    MDTextField:
+
+        id:password_field
+        hint_text: 'Password'
+        pos_hint: {'center_x': 0.5,'center_y': 0.61}
+        size_hint:0.9,0.06
+        height: dp(50)
+        icon_right: 'lock'
+        mode:'round'
+        password: True
+        on_text_validate: root.check_credentials()
+    MDBoxLayout:
+        md_bg_color:1,1,1,10
+        size_hint:0.07,0.04
+        pos_hint: {'center_x': 0.5,'center_y': 0.55}
+        radius:100
+    MDIconButton:
+        icon:"eye"
+        icon_size:18
+        theme_text_color: 'Custom'
+        text_color: 255,0.153, 0.51, 10
+        pos_hint: {'center_x': 0.5,'center_y': 0.55}
+        on_release:
+			self.icon="eye" if self.icon=="eye-off" else "eye-off"
+			password_field.password=True if  password_field.password is False else False
+    MDFillRoundFlatIconButton:
+        text:"Connecter"
+        icon:"login"
+        pos_hint: {'center_x': 0.5,'center_y': 0.4}
+        md_bg_color:51/255, 255/255, 51/255, 1
+        font_size:18
+        on_release: root.check_credentials()
+    MDFlatButton:
+        text:"Mot de passe oublié ?"
+        pos_hint: {'center_x': 0.5,'center_y': 0.34}
+        halign:"center"
+        font_size:'13sp'
+        on_release: app.Oublier()
+    MDProgressBar:
+        pos_hint:{'center_x':0.5,'center_y':.28}
+        size_hint:0.7,0.005
+        value: 100
+        color: app.theme_cls.accent_color
+    MDLabel:
+        text:"Souhaitez-vous créer un nouveau compte ?"
+        pos_hint: {'center_x': 0.5,'center_y': 0.23}
+        halign:"center"
+        bold:True
+        font_size:15
+    MDRectangleFlatButton:
+        text:"S'inscrire"
+        pos_hint: {'center_x': 0.5,'center_y': 0.17}
+        on_release: root.Inscrire()
+    MDBoxLayout:
+		md_bg_color: 0/255,255/255,255/255,1
+		size_hint: 1, 0.1
+		pos_hint: {'center_x': 0.5,'center_y': 0}
+		radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        #on_release:
+
+            #app.root.transition.duration=0
+    MDIconButton:
+        icon:"menu-open"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+
+    

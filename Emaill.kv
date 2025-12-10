@@ -1,0 +1,203 @@
+MDScreen:
+    md_bg_color:240/255,240/255,240/255,10
+    name:'email'
+    ScrollView:
+        size:self.size
+        BoxLayout:
+            orientation:"vertical"
+            padding:(30,120,30,10)
+            spacing: '90'
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            MDBoxLayout:
+                size_hint:None,None
+                height:1
+                orientation: 'horizontal'
+                padding:40,0,10,10
+                MDBoxLayout:
+                    size_hint: None,None
+                    
+                    radius:100
+                    pos_hint: {'center_x': 0.25,'center_y': 0.85}
+                    canvas.after:
+                        Color:
+                            rgba: 0.51, 255, 0.51, 1
+                        Line:
+                            width: 2  
+                            ellipse: self.x, self.y, self.width, self.height
+                    Image:
+                        source:"Untitled design-modified.png"
+                        size_hint:0.8,0.8
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                MDLabel:
+                    text:'  Dentiste\n  Amana'
+                    pos_hint:{'center_x':.65,'center_y':.85}
+                    halign:'center'
+                    theme_text_color:'Custom'
+                    text_color:0,0,0,10
+                    font_size:'20sp'
+                    size_hint:None,None
+                    width:100
+                    height:100
+                    bold:True
+            MDBoxLayout:
+                padding:0,40,0,0
+                MDProgressBar:
+                    orientation:"horizontal"
+                    pos_hint:{'center_x':0.5,'center_y':.85}
+                    size_hint:None,None#0.8,0.005
+                    value: 100
+                    width:300
+                    height: dp(3)
+                    color: app.theme_cls.accent_color
+            MDLabel:
+                text: 'RAPPEL:'
+                bold:True
+                pos_hint: {'center_x': .5}
+                halign:"center"
+            BoxLayout:
+                orientation:"vertical"    
+                spacing: '35'
+                MDLabel:
+
+                    font_size:14
+                    text: 'Objet : Rappel : Prochain rendez-vous dentaire'
+                MDLabel:
+                    id:cher
+                    font_size:14
+                    text: 'Cher(e) [Nom du patient],'
+            MDBoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    font_size:14
+                    text: "Nous espérons que ce message vous trouve en bonne santé. Nous souhaitons vous rappeler votre prochain rendez-vous dentaire au cabinet Dentiste Amana. Nous nous réjouissons de vous voir bientôt et de vous offrir les meilleurs soins dentaires possibles."
+            MDBoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    bold:True
+                    font_size:14
+                    text:'Détails du rendez-vous:'
+            MDBoxLayout:
+                spacing:23
+                padding:18
+                
+                orientation: 'vertical'
+                MDLabel:
+                    font_size:14
+                    id:date
+                    text: 'Date : Date du rendez-vous'
+                MDLabel:
+                    font_size:14
+                    id: heu
+                    text: 'Heure : Heure du rendez-vous'
+                MDLabel:
+                    font_size:12
+                    text: 'Lieu : Derb Ghelef,305,BD Bir Anzarane Romoandie ||(Tour 3),Residence Saadallah'
+
+            MDBoxLayout:
+                padding:0,0,0,60
+                orientation: 'vertical'
+                MDLabel:
+                    font_size:14
+                    text: 'Veuillez prendre en compte les points importants suivants:'
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing:100
+                padding:0,0,0,60
+                MDLabel:
+                    font_size:14
+                    text: "-Heure d'arrivée : Veuillez arriver 10 minutes avant l'heure prévue de votre rendez-vous afin de remplir toute la documentation nécessaire et d'assurer un processus d'enregistrement fluide."
+            MDBoxLayout:
+                padding:0,0,0,40
+                orientation: 'vertical'
+                MDLabel:
+                    font_size:14
+                    text: "-Annulation ou report : Si, pour une raison quelconque, vous ne pouvez pas vous rendre à votre rendez-vous, veuillez nous en informer au moins 24 heures à l'avance afin que nous puissions proposer ce créneau horaire à un autre patient dans le besoin."
+            MDBoxLayout:
+                padding:0,0,0,0
+                
+                MDLabel:
+                    font_size:14
+                    text: "-Préparations : Avant votre rendez-vous, n'oubliez pas de vous brosser soigneusement les dents et de passer la soie dentaire. Si vous avez des préoccupations spécifiques ou des questions que vous souhaitez aborder lors de votre visite, n'hésitez pas à les noter et à les apporter avec vous."
+            MDBoxLayout:
+                padding:0,0,0,0
+                orientation:'vertical'
+                MDLabel:
+                    font_size:14
+                    text:'Cordialement,'
+
+
+
+
+
+            MDBoxLayout:
+                padding:0,0,0,30
+                orientation:'vertical'
+                MDLabel:
+                    font_size:14
+                    text:'Cabinet dentaire:Dentiste Amana'
+            MDBoxLayout:
+                padding:0,0,0,60
+                orientation:'vertical'
+                MDLabel:
+                    font_size:14
+                    text:'Telephone:0589095624'
+            MDBoxLayout:
+                padding:0,0,0,1200
+                MDProgressBar:
+                    orientation:"horizontal"
+                    pos_hint:{'center_x':0.5,'center_y':.9}
+                    size_hint:None,None#0.8,0.005
+                    value: 100
+                    width:300
+                    height: dp(3)
+                    color: app.theme_cls.accent_color
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='Notification'
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'
+                

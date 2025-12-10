@@ -1,0 +1,170 @@
+<ChatbotApp>:
+    name:'Messagerie'
+    MDBoxLayout:
+        spacing:dp(20)
+        orientation:'vertical'
+
+        MDTopAppBar:
+            title:'Dentiste Amana'
+            theme_text_color: "Custom"
+            text_color: 0, 0, 0, 1
+            left_action_items:[['robot']]
+            md_bg_color:0,255,255,1
+        MDBoxLayout:
+            pos_hint:{'center-x':0.5,'center-Y':'0.8'}
+            size_hint_y:None
+            height:40
+            MDLabel:
+                text:'Posez vos questions'
+                valigh:'middle'
+                haligh:'center'
+
+        ScrollView:
+            MDBoxLayout:
+                id:chat_area
+                orientation:'vertical'
+                adaptive_height:True
+                size_hint_y:None
+                spacing:12
+                padding:0,20,0,40
+        MDBoxLayout:
+            size_hint_y:None
+            height:50
+            padding:20,20,20,50
+            spacing:10
+            MDTextField:
+                id:message
+                mode:'round'
+                hint_text:'Entrer votre message'
+                multiline:True
+                max_text_length:200
+                font_style:'caption'
+                size_hint_x:0.85
+                padding:5
+            MDFillRoundFlatIconButton:
+                text:'Envoyer'
+                icon:'send'
+                size_hint_x:0.15
+                on_press:root.send_message()
+                on_release:root.bot_response()
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                text:"Nom Prenom"
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:root.deconnecter()
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.Messagerie_back()
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.Messagerie_back()
+
+
+
+<PatientInput>:
+    size_hint_y:None
+    adaptive_height:True
+    size_hint_x:1
+    size:200,200
+    pos_hint:{'center-x':0.8}
+    height:'120dp'
+    radius: dp(0)
+    Screen:
+        MDCard:
+            md_bg_color:0,255,0,1
+            pos_hint: {'center_x': 0.38}
+            size_hint_x:0.7
+            radius:30,30,30,-10
+            MDLabel:
+                id: userinput
+                text: root.text
+                color: 1,1,1,1
+                font_size: root.font_size
+                valigh: "middle"
+                halign: "center"
+
+<Reponse>:
+    size_hint_y:None
+    size:200,200
+    adaptive_height:True
+    size_hint_x:1
+    pos_hint:{'center-x':0.2}
+    radius: dp(25)
+    Screen:
+        MDCard:
+            radius:20,20,20,20
+            md_bg_color:0,0,1,1
+            size_hint_x:0.7
+            pos_hint: {'center_x': 0.63}
+            radius:30,30,-10,30
+            MDLabel:
+                id: botresponse
+                text: root.text
+                color: 1,1,1,1
+                font_size: root.font_size
+                valigh: "middle"
+                halign: "center"
+    
+
+

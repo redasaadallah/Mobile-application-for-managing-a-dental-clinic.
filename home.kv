@@ -1,0 +1,231 @@
+<OpenApp>:
+    
+        
+    md_bg_color: 240/255,240/255,240/255,1
+    MDBoxLayout:
+        md_bg_color: 0,255,255,10
+        size_hint: 1, 0.15
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:15
+    MDIcon:
+        icon:"account-circle-outline"
+        pos_hint: {'center_x': 0.25,'center_y': 0.963}
+        font_size:38
+    MDLabel:
+        id:userup
+        pos_hint: {'center_x': 0.6,'center_y': 0.96}
+        halign:"center"
+        font_size:24
+    MDBoxLayout:
+        size_hint: 0.3, 0.16
+        radius:100
+        pos_hint: {'center_x': 0.25,'center_y': 0.83}
+        canvas.after:
+            Color:
+                rgba: 0.51, 255, 0.51, 1
+            Line:
+                width: 2  
+                ellipse: self.x, self.y, self.width, self.height
+        Image:
+            source:"Untitled design-modified.png"
+            size_hint:.8,.8
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+    MDLabel:
+        text:'  Dentiste\n  Amana'
+        pos_hint:{'center_x':.65,'center_y':.83}
+        halign:'center'
+        theme_text_color:'Custom'
+        text_color:0,0,0,10
+        font_size:'35sp'
+        bold:True
+    MDGridLayout:
+        cols:2
+        size_hint_y:.75
+        padding:[dp(25),dp(15),dp(25),dp(45)]
+        spacing:dp(5)
+        ElementCard:
+            md_bg_color:0,0,1,1
+            spacing:1
+            on_release:root.Fixer_RDV()
+            image:'Calendar_Icon.png'
+            MDLabel:
+                theme_text_color:'Custom'
+                text_color:1,1,1,1
+                text:"Fixer un Rendez-vous"
+                halign:"center"
+                bold:True   
+        ElementCard:
+            md_bg_color:0/255,204/255,0/255,1
+            spacing:1
+            image:'mesrendezvous - Copy1.png'
+            on_release:root.Mes_RDV()
+            MDLabel:
+                text:"Mes Rendez-vous"
+                theme_text_color:'Custom'
+                text_color:1,1,1,1
+                halign:"center"
+                bold:True
+        ElementCard:
+            md_bg_color:0/255,204/255,0/255,1
+            padding:0,20,0,40
+            spacing:10
+            image:'mesinfosperso - Copy11.png'
+            on_release:root.Mes_infos_perso()
+            MDLabel:
+                theme_text_color:'Custom'
+                text_color:1,1,1,1
+                text:"Mes information personnelles"
+                halign:"center"
+                bold:True
+        MDCard:
+            md_bg_color:0,0,1,1
+            padding: dp(25)
+            spacing: dp(10)
+            radius: dp(25)
+            ripple_behavior: True
+            id:fourth_card
+            on_release:root.Notification()
+            orientation: 'vertical'
+            MDBoxLayout:
+                padding:0,8
+                orientation: 'vertical'
+                spacing:dp(30)
+                Image:
+                    source:'notification-icon - Copy11.png'
+                    size_hint:None,None
+                    size:'46dp','46dp'
+                    pos_hint:{"center_x":.5,"center_y":.95}
+                MDBoxLayout:
+                    orientation:'vertical'
+                    spacing:dp(3)
+                    padding:0,0,0,10
+                    MDLabel:
+                        font_size:15
+                        bold:True
+                        text:'Notifications'
+                        theme_text_color:'Custom'
+                        text_color:1,1,1,1
+                        halign:'center'
+                        #font_name:'Poppins-SemiBold.ttf'
+        ElementCard:
+            md_bg_color:0,0,1,1
+            spacing:3
+            padding:0,30,0,40
+            image:'messagerie1111.png'
+            on_release:root.Messagerie()
+            MDLabel:
+                theme_text_color:'Custom'
+                text_color:1,1,1,1
+                text:"Messagerie"
+                halign:"center"
+                bold:True
+        ElementCard:
+            md_bg_color:0/255,204/255,0/255,1
+            spacing:8
+            padding:0,30,0,40
+            image:'contact.jpg'
+            on_release:root.Contact()
+            MDLabel:
+                theme_text_color:'Custom'
+                text_color:1,1,1,1
+                text:"Contact"
+                halign:"center"
+                bold:True
+    MDIconButton:
+        id: card1_button
+        icon_size:12
+        icon: "numeric-1"
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
+        pos_hint:{"center_x":.93,"center_y":.48}
+        #on_release: app.do_something("card1")  # Add any desired action here
+        canvas.before:
+            Color:
+                rgba: 1, 0, 0, 1
+            Ellipse:
+                pos: self.pos
+                size: self.size
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    root.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:    
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:
+
+<ElementCard@MDCard>:
+    md_bg_color:128/255,0/255,128/255,1
+    padding:dp(25)
+    spacing:dp(20)
+    radius:dp(25)
+    ripple_behavior: True
+    image:''
+    text:''
+    badge_text: ''
+    orientation:'vertical'
+    Image:
+        source:root.image
+        size_hint:None,None
+        size:'46dp','46dp'
+        pos_hint:{"center_x":.5,"center_y":.35}
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing:dp(0)
+        padding:dp(0)
+        MDLabel:
+            font_size:'20sp'
+            text:root.text
+            theme_text_color:'Custom'
+            text_color:1,1,1,1
+            halign:'center'
+            #font_name:'Poppins-SemiBold.ttf'
+<BadgeIcon@MDBoxLayout+MDIconButton>:
+    pos_hint:{"center_x":.05,"center_y":1.3}
+    theme_text_color: 'Custom'
+    text_color: 1, 1, 1, 1
+    on_release: root.do_something()  # Add any desired action here
+    canvas.before:
+        Color:
+            rgba: 1, 0, 0, 1
+        Ellipse:
+    
+

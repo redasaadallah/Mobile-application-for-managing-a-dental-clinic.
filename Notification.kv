@@ -1,0 +1,129 @@
+
+
+MDScreen:
+    name:'Notification'
+    MDFloatLayout:
+        id:pere
+        MDBoxLayout:
+            md_bg_color:0/255,255/255,255/255,1
+            size_hint: 1, 0.1
+            pos_hint: {'center_x': 0.5,'center_y': 1}
+            radius:15
+
+        MDBoxLayout:
+            id:list
+            orientation:'vertical'
+            pos_hint:{'center_x':.5,'center_y':1.07}
+            MDList:
+                id:list0
+                md_bg_color:1,1,1,1
+                pos_hint:{'center_x':.5,'center_y':.5}
+
+                TwoLineAvatarIconListItem:
+                    id:avatar1
+                    theme_text_color :'Error'
+                    text:"Bienvenue chez Dentiste Amana"
+                    secondary_text:"from:Amanadentiste234@gmail.com\\"
+                    on_release:app.bienvenue();app.modif_email_not2()
+                    IconLeftWidget:
+                        icon:"email"
+                        theme_text_color:"Custom"
+                        text_color:0, 0, 0, 1
+                        pos_hint:{"center_x": 0, "center_y": 0.5}
+
+                    MDFloatingActionButton:
+                        id:fb1
+                        icon: 'numeric-1'
+                        theme_text_color: "Custom"
+                        text_color: 0, 0, 0, 1
+                        size_hint: None, None
+                        size: dp(36), dp(36)
+                        elevation_normal: 2
+                        pos_hint: {"center_x": 0.9, "center_y": 0.5}
+                        canvas:
+                            Color:
+                                rgba: 0, 0, 0, 0.2
+                            Ellipse:
+                                size: self.size
+                                pos: self.pos
+
+            MDList:
+                id:list1
+                md_bg_color:1,1,1,1
+                pos_hint:{'center_x':.5,'center_y':.3}
+
+                TwoLineAvatarIconListItem:
+                    id:avatar
+                    theme_text_color :'Error'
+                    text:"Rappel Rendez-vous"
+                    secondary_text:"from:Amanadentiste234@gmail.com\\"
+                    on_release:app.switch_screen();app.modif_email_not()
+                    IconLeftWidget:
+                        icon:"email"
+                        theme_text_color:"Custom"
+                        text_color:0, 0, 0, 1
+                        pos_hint:{"center_x": 0, "center_y": 0.5}
+
+                    MDFloatingActionButton:
+                        id:fb
+                        icon: 'numeric-1'
+                        theme_text_color: "Custom"
+                        text_color: 0, 0, 0, 1
+                        size_hint: None, None
+                        size: dp(36), dp(36)
+                        elevation_normal: 2
+                        pos_hint: {"center_x": 0.9, "center_y": 0.5}
+                        canvas:
+                            Color:
+                                rgba: 0, 0, 0, 0.2
+                            Ellipse:
+                                size: self.size
+                                pos: self.pos
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'
+

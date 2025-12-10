@@ -1,0 +1,163 @@
+MDScreen:
+    name:'Contactn'
+    md_bg_color: 240/255,240/255,240/255,1
+	MDBoxLayout:
+        md_bg_color: 0/255,255/255,255/255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:15
+    MDLabel:
+        text:"Contactez-nous"
+        pos_hint: {'center_x': 0.7,'center_y': 0.9}
+        bold:True
+        font_size:29
+    MDBoxLayout:
+        orientation:"vertical"
+        size_hint:0.8,0.5
+        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        spacing:12
+        MDBoxLayout:
+            orientation:"horizontal"
+            spacing:12
+            MDBoxLayout:
+                orientation:"vertical"
+                md_bg_color:0.7,0.4,0.5,1
+                radius:15    
+                MDIcon:
+                    icon:"map-marker-outline"
+                    font_size:60
+                    color: 1 , 1 , 1 , 1
+                    pos_hint: {'center_x': 0.5,'center_y': 0}
+                MDLabel:
+                    text:"Notre cabinet"
+                    bold:True
+                    halign:"center"
+                    color: 1 , 1 , 1 , 1
+                MDLabel:
+                    text:"Derb Ghelef,305,BD Bir Anzarane Romoandie ||(Tour 3),Residence Saadallah"
+                    font_size:10
+                    halign:"center"
+                    color:1,1,1,1
+            MDBoxLayout:
+                orientation:"vertical"
+                md_bg_color:0.1,0.8,0.2,1
+                radius:15
+                MDIcon:
+                    icon:"phone"
+                    font_size:60
+                    color:1,1,1,1
+                    pos_hint: {'center_x': 0.5,'center_y': 0}
+                MDLabel:
+                    text:"Téléphone"
+                    bold:True
+                    halign:"center"
+                    color:1,1,1,1
+                MDLabel:
+                    text:"0698096789 0623453200"
+                    font_size:15
+                    halign:"center"
+                    color:1,1,1,1
+        MDBoxLayout:
+            orientation:"horizontal"
+            spacing:12
+            MDBoxLayout:
+                orientation:"vertical"
+                md_bg_color:0.8,0.8,0,5
+                radius:15
+                MDIcon:
+                    icon:"fax"
+                    font_size:60
+                    color: 1 , 1 , 1 , 1
+                    pos_hint: {'center_x': 0.5,'center_y': 0}
+                MDLabel:
+                    text:"FAX"
+                    bold:True
+                    color: 1,1, 1, 1
+                    halign:"center"
+                MDLabel:
+                    text:"0589095624"
+                    color: 1,1, 1, 1
+                    font_size:15
+                    halign:"center"
+            MDBoxLayout:
+                orientation:"vertical"
+                md_bg_color:0.8,0.33,0.155,1
+                radius:15
+                MDIcon:
+                    icon:"email"
+                    font_size:60
+                    color: 1,1, 1, 1
+                    pos_hint: {'center_x': 0.5,'center_y': 0}
+                MDLabel:
+                    text:"E-MAIL"
+                    bold:True
+                    halign:"center"
+                    color: 1,1, 1, 1
+                MDLabel:
+                    text:"[u]Amanadentiste234@gmail.com[/u]"
+                    font_size:12
+                    markup:True
+                    halign:"center"
+                    color: 1,1, 1, 1
+    
+    MDTextFieldRect:
+        id:fr
+        hint_text:"Vos commentaires"
+        multiline:True
+        mode:"round"
+        size_hint:0.7,0.2
+        width: 255
+        height:255
+        pos_hint: {'center_x': 0.5,'center_y': 0.24}
+    MDRaisedButton:
+        text:"Envoyer"
+        pos_hint: {'center_x': 0.27,'center_y': 0.1}
+        on_release:
+			app.ctct()
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'

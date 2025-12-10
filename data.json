@@ -1,0 +1,277 @@
+[
+  {
+    "response_type": "greeting",
+    "user_input": ["bonjour", "salut", "coucou"],
+    "bot_response": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+    "required_words": []
+  },
+  {
+    "response_type": "greeting",
+    "user_input": ["au revoir", "adieu", "à bientôt"],
+    "bot_response": "Au revoir ! Passez une excellente journée !",
+    "required_words": []
+  },
+  {
+    "response_type": "greeting",
+    "user_input": ["ravi", "faire", "connaissance"],
+    "bot_response": "Ravi de faire votre connaissance ! Comment puis-je vous aider ?",
+    "required_words": ["ravi", "faire", "connaissance"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["comment", "garder", "dents", "saines"],
+    "bot_response": "Pour garder vos dents saines, assurez-vous de vous brosser les dents deux fois par jour, de passer du fil dentaire quotidiennement, de manger une alimentation équilibrée et de consulter régulièrement votre dentiste pour des contrôles et des nettoyages.",
+    "required_words": ["garder", "dents", "saines"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["assurance", "dentaire", "acceptée"],
+    "bot_response": "Nous acceptons un large éventail de régimes d'assurance dentaire. Veuillez nous fournir le nom de votre assureur, et nous pourrons vous indiquer si nous sommes agréés.",
+    "required_words": ["assurance", "dentaire", "acceptée"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["douleur", "dent", "urgence"],
+    "bot_response": "Si vous ressentez une douleur dentaire ou une urgence dentaire, veuillez contacter immédiatement notre clinique. Nous ferons de notre mieux pour vous fournir une assistance rapide.",
+    "required_words": ["douleur", "dent", "urgence"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["options", "blanchiment", "dents"],
+    "bot_response": "Nous proposons des traitements de blanchiment professionnel qui peuvent aider a eclaircir votre sourire. Nous fournissons egalement des kits de blanchiment à domicile. Prenez rendez-vous avec notre dentiste pour discuter de la meilleure option de blanchiment pour vous.",
+    "required_words": ["options", "blanchiment", "dents"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["implants", "dentaires", "procédure"],
+    "bot_response": "Les implants dentaires sont une excellente option pour remplacer les dents manquantes. La procédure consiste à placer chirurgicalement un implant dans l'os de la mâchoire pour soutenir une couronne dentaire. Prenez rendez-vous avec notre spécialiste des implants pour en savoir plus.",
+    "required_words": ["implants", "dentaires", "procédure"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["recommandations", "nettoyage", "dentaire"],
+    "bot_response": "Il est recommande de faire un nettoyage dentaire professionnel tous les six mois. Les nettoyages reguliers permettent d'eliminer l'accumulation de plaque et de tartre, prevenant les problemes dentaires et maintenant vos gencives et vos dents en bonne sante.",
+    "required_words": ["recommandations", "nettoyage", "dentaire"]
+  },
+  {
+    "response_type": "question",
+    "user_input": ["options", "dentisterie", "esthétique"],
+    "bot_response": "Nous proposons différentes options de dentisterie esthétique, y compris le blanchiment des dents, les facettes dentaires, la restauration dentaire et les relooking de sourire. Notre dentiste esthétique peut discuter de ces options avec vous et créer un plan de traitement personnalisé.",
+    "required_words": ["options", "dentisterie", "esthétique"]
+  },
+ {
+"response_type": "appointment",
+"user_input": ["prendre", "rendez-vous", "patient"],
+"bot_response": "Bien sûr ! Nous serions ravis de vous aider à prendre rendez-vous. Pouvez-vous nous fournir votre nom complet, votre numéro de téléphone et votre disponibilité préférée ?",
+"required_words": ["prendre", "rendez-vous", "patient"]
+},
+{
+"response_type": "appointment",
+"user_input": ["horaires", "disponibles"],
+"bot_response": "Nos horaires sont du lundi au vendredi de 9h00 à 15h30. Quelle plage horaire vous conviendrait le mieux ?",
+"required_words": ["horaires", "disponibles"]
+},
+{
+"response_type": "appointment",
+"user_input": ["urgence", "dentaire"],
+"bot_response": "En cas d'urgence dentaire, veuillez nous appeler immédiatement au [numéro de téléphone]. Nous ferons de notre mieux pour vous prendre en charge dès que possible.",
+"required_words": ["urgence", "dentaire"]
+},
+{
+"response_type": "appointment",
+"user_input": ["annuler", "rendez-vous"],
+"bot_response": "Si vous souhaitez annuler votre rendez-vous, veuillez nous contacter au plus tôt afin que nous puissions ajuster notre emploi du temps. Merci de nous informer dès que possible.",
+"required_words": ["annuler", "rendez-vous"]
+},
+{
+"response_type": "dental_pain",
+"user_input": ["mal", "dent"],
+"bot_response": "Je suis désolé d'apprendre que vous avez mal aux dents. La douleur dentaire peut avoir différentes causes, notamment les caries, les infections ou les problèmes de gencives. Il est important de consulter un dentiste pour évaluer la cause de la douleur et recevoir un traitement approprié. Je vous recommande de prendre rendez-vous avec notre clinique dentaire dès que possible.",
+"required_words": ["mal", "dent"]
+},
+{
+"response_type": "dental_pain",
+"user_input": ["soulager", "douleur", "dentaire"],
+"bot_response": "Pour soulager temporairement la douleur dentaire, vous pouvez prendre un analgésique en vente libre comme le paracétamol ou l'ibuprofène selon les instructions. Évitez les aliments chauds, froids ou sucrés qui pourraient aggraver la douleur. Cependant, il est important de consulter un dentiste pour traiter la cause sous-jacente de la douleur.",
+"required_words": ["soulager", "douleur", "dentaire"]
+},
+{
+"response_type": "dental_pain",
+"user_input": ["urgence", "dentaire"],
+"bot_response": "Si vous avez une urgence dentaire et que vous ressentez une douleur intense, je vous recommande de contacter notre clinique dentaire immédiatement. Nous ferons de notre mieux pour vous prendre en charge dès que possible et soulager votre douleur.",
+"required_words": ["urgence", "dentaire"]
+},
+{
+"response_type": "dental_pain",
+"user_input": ["remèdes", "naturels", "douleur", "dentaire"],
+"bot_response": "Certains remèdes naturels peuvent offrir un soulagement temporaire de la douleur dentaire, comme l'application d'un clou de girofle ou d'huile de clou de girofle sur la dent douloureuse, ou l'utilisation d'un sachet de thé froid sur la zone douloureuse. Cependant, il est important de consulter un dentiste pour évaluer la cause sous-jacente de la douleur et recevoir un traitement approprié.",
+"required_words": ["remèdes", "naturels", "douleur", "dentaire"]
+},
+{
+"response_type": "offers",
+"user_input": ["offres", "dentaires"],
+"bot_response": "Nous proposons différentes offres dentaires pour nos patients. Cela comprend des réductions sur les nettoyages dentaires réguliers, les examens de routine, les traitements de blanchiment des dents et plus encore. Pour en savoir plus sur nos offres actuelles, je vous recommande de contacter notre clinique dentaire ou de consulter notre site web.",
+"required_words": ["offres", "dentaires"]
+},
+{
+"response_type": "offers",
+"user_input": ["tarifs", "soins", "dentaires"],
+"bot_response": "Nos tarifs pour les soins dentaires varient en fonction du type de traitement nécessaire. Nous offrons des tarifs compétitifs et des options de paiement flexibles pour rendre les soins dentaires plus accessibles. Je vous conseille de prendre rendez-vous avec notre clinique dentaire pour une évaluation personnalisée et pour discuter des tarifs spécifiques à votre situation.",
+"required_words": ["tarifs", "soins", "dentaires"]
+},
+{
+"response_type": "offers",
+"user_input": ["assurances", "dentaires"],
+"bot_response": "Nous acceptons différentes assurances dentaires pour faciliter l'accès aux soins dentaires pour nos patients. Veuillez nous fournir les détails de votre assurance dentaire lors de la prise de rendez-vous afin que nous puissions vérifier votre couverture. Si vous avez des questions spécifiques sur les assurances dentaires acceptées, je vous invite à nous contacter directement.",
+"required_words": ["assurances", "dentaires"]
+},
+{
+"response_type": "offers",
+"user_input": ["nouveautés", "traitements", "dentaires"],
+"bot_response": "Nous sommes fiers d'offrir les dernières nouveautés en matière de traitements dentaires. Cela comprend des avancées technologiques telles que les scanners intraoraux, les implants dentaires, les facettes en céramique et bien plus encore. Notre équipe dentaire est formée aux techniques les plus récentes pour offrir à nos patients des soins de haute qualité. N'hésitez pas à prendre rendez-vous pour découvrir nos nouveautés en matière de traitements dentaires.",
+"required_words": ["nouveautés", "traitements", "dentaires"]
+},
+{
+"response_type": "dental_procedures",
+"user_input": ["actes", "dentaires"],
+"bot_response": "Nous proposons une gamme complète d'actes dentaires pour répondre aux besoins de nos patients. Cela comprend les nettoyages dentaires, les obturations, les détartrages, les traitements de canal, les extractions dentaires, les couronnes, les bridges, les implants dentaires et bien plus encore. Chaque acte est réalisé par notre équipe de dentistes qualifiés dans un environnement sûr et confortable. Si vous avez des questions spécifiques sur les actes dentaires, n'hésitez pas à nous contacter.",
+"required_words": ["actes", "dentaires"]
+},
+{
+"response_type": "dental_procedures",
+"user_input": ["implants", "dentaires"],
+"bot_response": "Les implants dentaires sont l'une des solutions les plus efficaces pour remplacer les dents manquantes. Il s'agit d'une procédure chirurgicale au cours de laquelle des implants en titane sont insérés dans l'os de la mâchoire pour servir de support aux prothèses dentaires. Les implants dentaires offrent une stabilité et une fonctionnalité similaires à celles des dents naturelles. Si vous souhaitez en savoir plus sur les implants dentaires ou si vous êtes intéressé par cette procédure, je vous encourage à prendre rendez-vous avec notre clinique dentaire pour une consultation approfondie.",
+"required_words": ["implants", "dentaires"]
+},
+{
+"response_type": "dental_procedures",
+"user_input": ["blanchiment", "dents"],
+"bot_response": "Le blanchiment des dents est une procédure esthétique qui permet d'éclaircir la couleur des dents et d'obtenir un sourire plus éclatant. Nous proposons différentes options de blanchiment des dents, notamment le blanchiment professionnel en clinique et les trousses de blanchiment à utiliser chez vous. Nos dentistes peuvent vous conseiller sur la meilleure option en fonction de vos besoins et de la condition de vos dents. Si vous souhaitez un sourire plus blanc, je vous recommande de prendre rendez-vous pour discuter des possibilités de blanchiment des dents.",
+"required_words": ["blanchiment", "dents"]
+},
+{
+"response_type": "dental_procedures",
+"user_input": ["orthodontie", "traitements"],
+"bot_response": "Les traitements d'orthodontie sont conçus pour corriger les problèmes de positionnement des dents et de l'alignement de la mâchoire. Cela peut inclure des appareils orthodontiques tels que les bagues dentaires traditionnelles, les aligneurs transparents comme Invisalign et d'autres options. Notre équipe d'orthodontistes qualifiés peut évaluer votre cas spécifique et vous recommander le meilleur traitement orthodontique pour obtenir un sourire droit et harmonieux. Si vous avez des préoccupations concernant la position de vos dents, je vous encourage à prendre rendez-vous pour une consultation orthodontique.",
+"required_words": ["orthodontie", "traitements"]
+},
+{
+"response_type": "solution",
+"user_input": ["problème", "dentaire"],
+"bot_response": "Nous offrons des solutions personnalisées pour résoudre les problèmes dentaires de nos patients. Notre équipe de dentistes qualifiés peut évaluer votre situation dentaire et recommander les traitements appropriés. Que ce soit pour traiter une carie, réparer une dent cassée, remplacer une dent manquante, ou résoudre d'autres problèmes dentaires, nous avons les compétences et les ressources nécessaires pour vous fournir une solution adaptée. N'hésitez pas à prendre rendez-vous pour discuter de votre problème dentaire spécifique et explorer les options de traitement disponibles.",
+"required_words": ["problème", "dentaire"]
+},
+{
+"response_type": "solution",
+"user_input": ["urgence", "dentaire"],
+"bot_response": "En cas d'urgence dentaire, nous sommes là pour vous aider. Notre clinique dentaire est équipée pour gérer les situations d'urgence telles que les douleurs dentaires aiguës, les infections, les dents cassées, et plus encore. Si vous avez une urgence dentaire, veuillez nous contacter immédiatement pour obtenir une assistance rapide. Notre équipe fera de son mieux pour vous prendre en charge dans les meilleurs délais et vous soulager de vos symptômes. Votre santé dentaire est notre priorité.",
+"required_words": ["urgence", "dentaire"]
+},
+{
+"response_type": "solution",
+"user_input": ["soins", "préventifs"],
+"bot_response": "Les soins préventifs sont essentiels pour maintenir une bonne santé dentaire à long terme. Nous encourageons vivement nos patients à adopter une routine de soins dentaires préventifs, tels que le brossage régulier des dents, l'utilisation de la soie dentaire, les examens dentaires réguliers et les nettoyages professionnels. Ces mesures simples peuvent aider à prévenir les problèmes dentaires tels que les caries, les maladies des gencives et les infections. Si vous souhaitez en savoir plus sur les soins préventifs et les mesures à prendre pour maintenir une bonne santé dentaire, n'hésitez pas à nous consulter.",
+"required_words": ["soins", "préventifs"]
+},
+{
+"response_type": "solution",
+"user_input": ["dentier", "prothèse"],
+"bot_response": "Si vous avez besoin d'un dentier ou d'une prothèse dentaire, nous pouvons vous aider. Notre équipe de dentistes expérimentés peut évaluer vos besoins et concevoir des prothèses dentaires personnalisées pour remplacer les dents manquantes. Que ce soit un dentier complet, un dentier partiel ou une prothèse fixe sur implants, nous veillerons à ce que votre prothèse soit confortable, fonctionnelle et esthétiquement agréable. Prenez rendez-vous pour une consultation afin d'explorer les options de prothèses dentaires adaptées à votre situation.",
+"required_words": ["dentier", "prothèse"]
+},
+
+{
+"response_type": "solution",
+"user_input": ["temps", "travail"],
+"bot_response": "Notre clinique dentaire propose des horaires de travail flexibles pour répondre aux besoins de nos patients. Nos dentistes et membres du personnel travaillent selon un horaire qui permet d'offrir des rendez-vous matin, après-midi et même en soirée. Nous comprenons que la vie quotidienne peut être occupée, c'est pourquoi nous nous efforçons de vous offrir des options de rendez-vous pratiques. Lors de la prise de rendez-vous, nous trouverons un créneau horaire qui convient le mieux à votre emploi du temps. N'hésitez pas à nous contacter pour discuter de vos disponibilités et planifier votre visite.",
+"required_words": ["temps", "travail"]
+},
+{
+"response_type": "solution",
+"user_input": ["paiement"],
+"bot_response": "Nous proposons différentes options de paiement pour nos services dentaires. Vous pouvez régler vos factures en utilisant des modes de paiement courants tels que les cartes de crédit, les cartes de débit ou les chèques. Nous acceptons également les paiements en espèces. De plus, nous travaillons avec certaines compagnies d'assurance dentaire pour faciliter le processus de remboursement. Avant de commencer tout traitement, notre équipe discutera des options de paiement avec vous et vous fournira les informations nécessaires sur les coûts et les modalités de paiement. Nous nous efforçons de rendre le processus de paiement aussi simple et pratique que possible pour nos patients.",
+"required_words": ["paiement"]
+},
+{
+"response_type": "solution",
+"user_input": ["précautions"],
+"bot_response": "La sécurité de nos patients est notre priorité absolue. Nous prenons toutes les précautions nécessaires pour garantir un environnement de soins dentaires sûr et hygiénique. Notre clinique dentaire suit strictement les normes d'asepsie et de stérilisation recommandées par les autorités sanitaires. Nous utilisons des équipements de protection individuelle tels que des gants, des masques et des lunettes de protection pour nos dentistes et membres du personnel. De plus, nous nettoyons et désinfectons régulièrement toutes les surfaces et les instruments dentaires pour prévenir la propagation des infections. Vous pouvez avoir confiance en notre engagement envers la sécurité et l'hygiène lors de votre visite à notre clinique dentaire.",
+"required_words": ["précautions"]
+},
+{
+"response_type": "solution",
+"user_input": ["précautions", "dents", "conseils"],
+"bot_response": "Pour prendre soin de vos dents et maintenir une bonne santé bucco-dentaire, voici quelques précautions et conseils importants : \n\n1. Brossez-vous les dents au moins deux fois par jour avec une brosse à dents souple et du dentifrice fluoré.\n\n2. Utilisez du fil dentaire quotidiennement pour éliminer la plaque et les débris alimentaires entre vos dents.\n\n3. Limitez votre consommation de sucre, de boissons gazeuses et d'aliments acides, car ils peuvent contribuer à la formation de caries.\n\n4. Évitez de fumer ou de mâcher du tabac, car cela peut causer des problèmes dentaires et de santé générale.\n\n5. Consultez régulièrement votre dentiste pour des examens dentaires et des nettoyages professionnels.\n\n6. Protégez vos dents lors de la pratique de sports à risque en portant un protège-dents.\n\n7. Évitez de mordre ou de mâcher des objets durs, tels que des glaçons ou des stylos, pour éviter d'endommager vos dents.\n\nEn suivant ces précautions et conseils, vous pouvez contribuer à maintenir une bonne santé dentaire et prévenir les problèmes bucco-dentaires.",
+"required_words": ["précautions", "dents", "conseils"]
+},
+{
+"response_type": "solution",
+"user_input": ["salle", "d'attente"],
+"bot_response": "Notre cabinet dentaire dispose d'une salle d'attente confortable et accueillante pour nos patients. Nous comprenons que l'attente peut parfois être inevitable, c'est pourquoi nous avons crée un espace où vous pouvez vous detendre avant votre rendez-vous. Notre salle d'attente est equipee de sièges confortables, de magazines recents, d'une télevision et d'une connexion Wi-Fi gratuite pour que vous puissiez passer le temps agreablement.",
+"required_words": ["salle", "d'attente"]
+},
+{
+"response_type": "solution",
+"user_input": ["cabinet", "dentaire"],
+"bot_response": "Notre cabinet dentaire est un lieu professionnel dédié à la prestation de services dentaires de qualité. Nous sommes équipés des dernières technologies et nous nous engageons à offrir des soins dentaires complets et personnalisés à nos patients. Notre équipe de dentistes qualifiés et attentionnés est là pour répondre à tous vos besoins dentaires, que ce soit pour des examens de routine, des traitements de carie, des soins des gencives, des traitements orthodontiques ou des procédures esthétiques. Nous accordons une grande importance à votre confort et à votre satisfaction, et nous nous efforçons de créer une atmosphère accueillante et détendue dans notre cabinet. Si vous avez des questions ou si vous souhaitez prendre rendez-vous, n'hésitez pas à nous contacter. Nous serions ravis de vous aider.",
+"required_words": ["cabinet", "dentaire"]
+},
+{
+"response_type": "solution",
+"user_input": ["flexible", "temps"],
+"bot_response": "Nous comprenons que la gestion du temps est importante pour nos patients. C'est pourquoi nous nous efforçons d'offrir des horaires flexibles pour les rendez-vous dentaires. Nous proposons des plages horaires variées, y compris des rendez-vous tôt le matin, en soirée et même certains week-ends, afin de convenir à différents emplois du temps. Notre objectif est de rendre les soins dentaires accessibles et pratiques pour nos patients. Lors de la prise de rendez-vous, notre équipe fera de son mieux pour trouver un créneau qui correspond à vos disponibilités. Si vous avez des contraintes spécifiques en termes d'horaires, n'hésitez pas à nous en informer, et nous ferons de notre mieux pour vous accommoder. Votre confort et votre satisfaction sont notre priorité.",
+"required_words": ["flexible", "temps"]
+},
+
+{
+"response_type": "solution",
+"user_input": ["visite", "journée"],
+"bot_response": "Lors de votre visite dans notre cabinet dentaire, nous nous engageons à vous offrir une expérience complète et de qualité. Notre équipe dévouée de professionnels dentaires est là pour vous accueillir et vous fournir les soins dont vous avez besoin. Lors de votre rendez-vous, vous serez pris en charge dès votre arrivée et accompagné tout au long de votre visite. Nous commencerons par une évaluation complète de votre santé bucco-dentaire, en effectuant des examens, des radiographies et des éventuels nettoyages. Ensuite, nous discuterons avec vous de vos besoins et de vos préoccupations dentaires, et élaborerons un plan de traitement personnalisé. Notre objectif est de vous offrir des soins dentaires complets et de répondre à toutes vos questions et préoccupations. Nous nous engageons à rendre votre visite agréable et à vous fournir les meilleurs soins possibles tout au long de la journée.",
+"required_words": ["visite", "journée"]
+},
+{
+"response_type": "solution",
+"user_input": ["médicament"],
+"bot_response": "Dans notre cabinet dentaire, nous sommes conscients que certains traitements dentaires peuvent nécessiter l'utilisation de médicaments. Les médicaments peuvent être prescrits pour soulager la douleur après une intervention, pour prévenir une infection ou pour faciliter la guérison. Notre équipe de dentistes évalue attentivement chaque cas et prescrit les médicaments appropriés en fonction des besoins individuels du patient. Il est important de suivre les instructions de prescription et de prendre les médicaments tels qu'indiqués. Si vous avez des allergies ou des préoccupations particulières concernant les médicaments, veuillez nous en informer avant votre traitement. Nous nous efforçons de vous fournir des soins dentaires sûrs et efficaces, en veillant à votre confort et à votre bien-être.",
+"required_words": ["médicament"]
+},
+{
+"response_type": "solution",
+"user_input": ["prescription"],
+"bot_response": "Dans notre cabinet dentaire, nos dentistes peuvent prescrire des médicaments et des traitements appropriés en fonction de vos besoins dentaires. Si vous avez des symptômes spécifiques ou si vous avez besoin d'un traitement particulier, notre équipe évaluera votre situation dentaire et pourra vous prescrire des médicaments si nécessaire. Les prescriptions peuvent inclure des antibiotiques pour traiter une infection dentaire, des analgésiques pour soulager la douleur post-opératoire, des anti-inflammatoires pour réduire l'inflammation ou d'autres médicaments spécifiques selon les besoins. Il est important de suivre les instructions de prescription et de prendre les médicaments tels qu'indiqués. Si vous avez des allergies ou des préoccupations particulières concernant les médicaments, veuillez en informer notre équipe afin que nous puissions adapter votre traitement en conséquence. Votre santé et votre sécurité sont notre priorité.",
+"required_words": ["prescription"]
+},
+{
+"response_type": "solution",
+"user_input": ["temps", "ouverture", "fermeture"],
+"bot_response": "Notre cabinet dentaire est ouvert du lundi au vendredi. Nos heures d'ouverture sont de 9h00 à 18h00. Nous comprenons que la disponibilité pendant la semaine peut être un défi pour certains patients, c'est pourquoi nous proposons également des plages horaires étendues certains jours. Nous vous recommandons de prendre rendez-vous à l'avance pour garantir votre place. En cas d'urgence dentaire en dehors des heures d'ouverture normales, veuillez contacter notre service d'urgence dentaire, qui est disponible 24h/24 et 7j/7. Nous nous efforçons de vous offrir des horaires pratiques et flexibles tout en maintenant des normes élevées de soins dentaires. Si vous avez des questions supplémentaires sur nos heures d'ouverture et de fermeture, n'hésitez pas à nous contacter.",
+"required_words": ["temps", "ouverture", "fermeture"]
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

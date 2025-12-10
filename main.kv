@@ -1,0 +1,123 @@
+MDScreen:
+    name:'main'
+    md_bg_color:0,0,0,0
+
+    MDBoxLayout:
+        orientation:'vertical'
+        MDBoxLayout:
+            size_hint_y:0.25
+            padding:dp(25)
+            MDBoxLayout:
+                orientation:'vertical'
+
+                MDLabel:
+                    text:"Dentiste Amana"
+                    font_style:'H4'
+                    font_size:'40sp'
+
+                MDBoxLayout:
+                    spacing:dp(10)
+                    adaptive_size:True
+
+
+
+                    MDLabel:
+                        text:'Home'
+                        adaptive_width:True
+                        text_size:None,None
+
+                    MDIcon:
+                        icon: "chevron-down"
+            Image:
+                source:'untitled Design-modified.png'
+
+
+        MDGridLayout:
+            cols:2
+            size_hint_y:.75
+            padding:[dp(15),dp(15),dp(15),dp(35)]
+            spacing:dp(15)
+            ElementCard:
+                image:'Calendar_Icon.png'
+                text:'Fixer un Rendez-vous'
+                on_release:app.Fixer_RDV()
+
+            ElementCard:
+                image:'mesrendezvous - Copy1.png'
+                text:' Mes Rendez-vous'
+                on_release:app.Mes_RDV()
+
+            ElementCard:
+                image:'mesinfosperso - Copy11.png'
+                text:'Mes informations personelles'
+                on_release:app.Mes_infos_perso()
+
+
+            ElementCard:
+                image:'notification-icon - Copy11.png'
+                text:'Notifications'
+                on_release:app.Notification()
+
+
+            ElementCard:
+                image:'messagerie1111.png'
+                text:'Messagerie'
+                on_release:app.Messagerie()
+
+            ElementCard:
+                image:'contact.jpg'
+                text:'Contact'
+                on_release:app.Contact()
+
+
+
+
+
+
+<ElementCard@MDCard>:
+
+    md_bg_color:128/255,0/255,128/255,1
+    padding:dp(10)
+    spacing:dp(10)
+    radius:dp(25)
+    ripple_behavior: True
+    image:''
+    text:''
+    orientation:'vertical'
+    Image:
+        source:root.image
+        size_hint:.5,.8
+        pos_hint:{"center_x":.5,"center_y":.35}
+
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing:dp(0)
+        padding:dp(20)
+        MDLabel:
+            font_size:'20sp'
+            text:root.text
+            theme_text_color:'Custom'
+            text_color:1,1,1,1
+            halign:'center'
+            font_name:'Poppins-SemiBold.ttf'
+
+        MDLabel:
+
+            font_size:'12sp'
+            theme_text_color:'Custom'
+            halign:'center'
+            text_color:1,1,1,1
+        MDLabel:
+            font_size:'15sp'
+
+            halign:'center'
+            theme_text_color:'Custom'
+            text_color:1,1,1,1
+
+
+
+
+
+
+
+

@@ -1,0 +1,130 @@
+<PatientApp>:
+    md_bg_color:240/255,240/255,240/255,1
+    ScrollView:
+        size:self.size
+        BoxLayout:
+            orientation:"vertical"
+            padding:(30,70,30,300)
+            spacing: '7'
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            MDBoxLayout:
+                size_hint: None, None
+                radius:100
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                canvas.after:
+                    Color:
+                        rgba: 0.51, 255, 0.51, 1
+                    Line:
+                        width: 2
+                        ellipse: self.x, self.y, self.width, self.height
+                Image:
+                    source:"Untitled design-modified.png"
+                    size_hint:.8,.8
+                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            MDTextField:
+                id:nom
+                hint_text:"Nom"
+                icon_left:"account-box"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:prenom
+                hint_text:"Prenom"
+                icon_left:"account-box"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:dn
+                hint_text:"Date de naissance"
+                icon_left:"calendar-range-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:tel
+                hint_text:"Telephone"
+                icon_left:"phone-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:adr
+                hint_text:"Adresse"
+                icon_left:"map-marker-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:email
+                hint_text:"Email"
+                icon_left:"email-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:ass
+                hint_text:"Assurance"
+                icon_left:"card-bulleted-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField:
+                id:cin
+                hint_text:"CIN"
+                icon_left:"card-account-details-outline"
+                mode:"rectangle"
+                on_text_validate: root.focus_next_text_inputs(self)
+            MDTextField
+                id:passw
+                hint_text:"Password"
+                icon_left:"lock"
+                mode:"rectangle"
+                password:True
+                on_text_validate:root.Creation_DATABASE_signup_auth()
+            MDBoxLayout:
+                spacing:0
+                padding:250,0,0,10
+                MDIconButton:
+                    icon:"eye"
+                    theme_text_color:"Hint"
+                    icon_size:"20sp"
+                    on_release:
+                        self.icon="eye" if self.icon=="eye-off" else "eye-off"
+                        passw.password=True if  passw.password is False else False
+            MDRectangleFlatIconButton:
+                pos_hint:{'center_x':0.5,'center_y':0}
+                halign:"center"
+                text:"s'inscrire"
+                icon:"check-underline"
+                size_hint:None,None
+                on_release:root.Creation_DATABASE_signup_auth()
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.switch_to_screen()
+    MDIconButton:
+        icon:"menu-open"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='loginp'
+	MDBoxLayout:
+        md_bg_color: 0,255,255,10
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:15
+        
+	
+			
+
+
+
+
+    

@@ -1,0 +1,87 @@
+MDScreen:
+    name:'login1'
+    MDFloatLayout:
+        md_bg_color:1,1,1,1
+        MDIconButton:
+            icon:'chevron-left'
+            user_font_size:'35sp'
+            pos_hint:{'center_y':.95}
+        MDLabel:
+            text:'Back'
+            font_size:'18sp'
+            font_name:'Poppins-SemiBold.ttf'
+            pos_hint:{'center_x':.55,'center_y':.949}
+        Image:
+            source:"Untitled design-modified.png"
+            size_hint:.16,.16
+            font_name:'Poppins-SemiBold.ttf'
+            pos_hint:{'center_x':.09,'center_y':.8}
+
+
+        MDLabel:
+            text:'Proceed with your'
+            font_size:'22sp'
+            font_name:'Poppins-Medium (1).ttf'
+            color:120/255,120/255,120/255,1
+            pos_hint:{'center_x':.53,'center_y':.68}
+
+
+        MDLabel:
+            text:'Login'
+            font_size:'28sp'
+            font_name:'Poppins-SemiBold.ttf'
+            pos_hint:{'center_x':.53,'center_y':.6}
+
+
+        MDFloatLayout:
+            pos_hint:{'center_x':.43,'center_y':.2}
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: (0.8, None)
+                height: dp(100)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+
+                MDTextField:
+                    id:username_field
+                    hint_text: 'Username'
+                    size_hint_y: None
+                    height: dp(50)
+                    icon_right: 'account'
+                    icon_right_color: app.theme_cls.primary_color
+                    on_text_validate: root.check_credentials()
+
+
+                MDTextField:
+                    id:password_field
+                    hint_text: 'Password'
+                    size_hint_y: None
+                    height: dp(50)
+                    icon_right: 'eye-off'
+                    icon_right_color: app.theme_cls.primary_color
+                    password: True
+                    on_text_validate: app.check_credentials()
+
+
+
+
+
+
+
+
+
+        MDRaisedButton:
+            text:'Login'
+            background_color:0,0,0,0
+            font_name:'Poppins-Medium (1).ttf'
+            size_hint:.79,.08
+            pos_hint:{'center_x':.5,'center_y':.15}
+            md_bg_color:128/255,0/255,128/255,1
+            on_release: app.check_credentials()
+
+        MDTextButton:
+            text:'Forget Password ?'
+            font_size:'13sp'
+            pos_hint:{'center_x':.5,'center_y':.02}
+            halign:'center'
+            color:120/255,120/255,120/255,1
+

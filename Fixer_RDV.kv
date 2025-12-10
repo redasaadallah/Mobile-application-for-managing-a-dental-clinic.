@@ -1,0 +1,79 @@
+MDScreen:
+
+    name:'Fixer_RDV'
+    MDFloatLayout:
+        md_bg_color:128/255,0/255,128/255,1
+        MDIconButton:
+
+            icon:'chevron-left'
+            user_font_size:'35sp'
+            pos_hint:{'center_y':.95}
+            on_release:app.Fixer_RDV_back()
+        MDLabel:
+            text:'Back'
+            font_size:'18sp'
+            font_name:'Poppins-SemiBold.ttf'
+            pos_hint:{'center_x':.55,'center_y':.949}
+
+        MDIconButton:
+            id:calendar
+            icon:'calendar'
+            size_hint:(None,None)
+            pos_hint:{'center_x':.6,'center_y':.649}
+            on_release:app.Date()
+
+        MDLabel:
+            id:date_label
+            text:'Selectionner une date de votre choix'
+            pos_hint:{'center_x':.55,'center_y':.64}
+            font_name:'Poppins-Medium (1).ttf'
+
+        MDTextField:
+            id:fdate
+            size_hint: (None,None)
+            height: dp(50)
+            pos_hint:{'center_x':.11,'center_y':.6}
+
+
+        MDIconButton:
+            id:clock
+            icon:'clock'
+            size_hint:(None,None)
+            pos_hint:{'center_x':.6,'center_y':.549}
+            on_release:app.Time()
+
+
+
+        MDLabel:
+            text:'Selectionner un creneau horaire de votre choix'
+            pos_hint:{'center_x':.55,'center_y':.549}
+            font_name:'Poppins-Medium (1).ttf'
+
+
+        MDTextField:
+            id:ftime
+            size_hint: (None,None)
+            height: dp(50)
+            pos_hint:{'center_x':.11,'center_y':.5}
+
+
+        MDRaisedButton:
+            text: 'Enregistrer'
+            pos_hint:{'center_x':.11,'center_y':.35}
+            on_release:app.enregistrer()
+
+
+
+
+
+
+
+
+        MDLabel:
+            id:change4
+            text:'Si vous avez deja fixer un rendez vous vous pouvez le consulter,modifier ou supprimer  dans votre Liste des Rendez-vous'
+            pos_hint:{'center_x':.55,'center_y':.149}
+
+
+
+

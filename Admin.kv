@@ -1,0 +1,1499 @@
+MDScreen:
+    name:'admin'
+    FloatLayout:   
+        opacity:1
+        id:ms
+#-------------------------------TopBar--------------------------------------------
+        MDBoxLayout:
+            md_bg_color: 0/255,255/255,255/255,1
+            size_hint:1,0.1
+            pos_hint: {'center_x': 0.5,'center_y': 0.95}
+            MDLabel:
+                text:"Espace Admin"
+                halign:"center"
+                bold:True
+                font_size:24
+#---------------------------------------------------------------------------------
+#-------------------------------screenmanager-------------------------------------------------
+        MDBoxLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.7}
+            size_hint:0.9,0.3
+            #radius:50,50,50,50
+            md_bg_color:0,255,255,1
+            ScreenManager:
+                id:scm_cases
+#---------------------------------screen1--------------------------------------------
+                Screen:
+                    id:display_patients_cases
+                    name:'display_patients_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(10,340,0,0)
+                            spacing: '70'
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:400#self.minimum_width
+                            size_hint_x:None
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:-45
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    size_hint_x:None
+                                    width:200
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Id_Patient:'
+                                        TextInput:
+                                            id:text1
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Nom:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Prenom:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3
+                                            font_size:11
+                                            height: dp(25)
+
+
+
+                                    MDBoxLayout:
+                                        orientation: 'vertical'
+                                        spacing:10
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Date de naissance:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:108,0,0,46
+                                        MDIconButton:
+                                            icon:"calendar"
+                                            icon_size:18
+                                            on_release:app.Date1()
+                                    MDBoxLayout:
+                                        padding:0,0,0,58
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Telephone:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5
+                                            font_size:11
+                                            height: dp(25)
+
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,55
+                                    size_hint_x:None
+                                    width:200
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Adresse:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        size_hint:1,0.9
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Antecedent medicaux:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Email:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text8
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Assurance:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text9
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                        MDRaisedButton:
+                                            id:dossier
+                                            size_hint: (0.7,None)
+                                            text:'Dossier'
+                                            height:dp(25)
+                                            on_release:app.Dossier()
+
+
+
+#----------------------------------------------------------------------------------
+#------------------------------------Screen2--------------------------------------
+                Screen:
+                    id:display_RDV_cases
+                    name:'display_RDV_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(40,370,0,0)
+                            spacing: '70'
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:self.minimum_width
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:20
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55   
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:12
+                                        orientation: 'vertical'    
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID du rendez_vous:'
+                                        TextInput:
+                                            id:text1_rdv
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID du patient:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_rdv
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('idpatientrdv')
+
+                                    MDBoxLayout: 
+                                        padding:0,0,0,40
+                                        spacing:12  
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Date du rendez-vous:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_rdv
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:78,0,0,86
+                                        MDIconButton:
+                                            icon:"calendar" 
+                                            icon_size:18
+                                            on_release:app.Date()
+                                    MDBoxLayout:
+                                        padding:0,0,0,80
+                                        orientation: 'vertical'
+                                        spacing:16
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Heure du rendez-vous:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_rdv
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:78,0,0,128
+                                        MDIconButton:
+                                            icon:"clock" 
+                                            icon_size:18
+                                            on_release:app.Time()
+                                    
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,150
+                                    MDBoxLayout:
+                                        padding:0,0,0,54
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: "Nom de l'acte"
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_rdv
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('acterdv')
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,45
+                                        spacing:16
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Statut du rendez-vous:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6_rdv
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        size_hint:1,0.9
+                                        spacing:18
+                                        padding:0,0,0,35
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Notes ou instructions supplémentaires:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7_rdv
+                                            font_size:11
+                                            height: dp(25)
+
+#-------------------------------------------------------------------------------
+#---------------------------------------screen3--------------------------------
+                Screen:
+                    id:display_visite_cases
+                    name:'display_visite_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(10,320,0,-150)
+                            spacing: '70'
+                            size_hint_y:None
+                            size_hint_x:None
+                            height:250#self.minimum_height
+                            width:400#self.minimum_width
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:-46
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,100   
+                                    MDBoxLayout:
+                                        spacing:8
+                                        orientation: 'vertical'    
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID de la visite:'
+                                        TextInput:
+                                            id:text1_visite
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:8
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Date de la visite:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_visite
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout: 
+                                        spacing:8
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID du patient:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_visite
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('idpatientrdv')
+
+                                    MDBoxLayout:
+                                        padding:105,0,0,102
+                                        MDIconButton:
+                                            icon:"calendar" 
+                                            icon_size:18
+                                            on_release:app.Date1()
+                                    
+                                    
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,55
+                                    size_hint_x:None
+                                    width:200
+                                    MDBoxLayout:
+                                        padding:0,0,0,45
+                                        orientation: 'vertical'
+                                        spacing:8
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Heure de la visite:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_visite
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:105,0,0,91
+                                        MDIconButton:
+                                            icon:"clock" 
+                                            icon_size:18
+                                            on_release:app.Time1()
+                                    MDBoxLayout:
+                                        padding:0,0,0,100
+                                        spacing:8
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: "Nom de l'acte:"
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_visite
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('acterdv')
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,100
+                                        spacing:8
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: "Seance:"
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7_visite
+                                            font_size:11
+                                            height: dp(25)
+
+                            MDBoxLayout:
+                                spacing:8
+                                padding:0,0,0,170
+                                orientation: 'vertical'
+                                MDLabel:
+                                    font_size:13
+                                    bold:True
+                                    text: 'Notes ou remarques supplémentaires:'
+                                TextInput:
+                                    size_hint: (0.75,None)
+                                    multiline:False
+                                    id:text6_visite
+                                    font_size:11
+                                    height: dp(25)
+
+                                    
+                                    
+                                    
+
+#-----------------------------------------------------------------------------------
+#------------------------------------screen4----------------------------------------
+                Screen:
+                    id:display_salle_cases
+                    name:'display_salle_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(40,400,0,0)
+                            spacing: '70'
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:self.minimum_width
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:20
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    padding:0,0,0,110
+                                    spacing:55   
+                                    MDBoxLayout:
+                                        spacing:12
+                                        orientation: 'vertical'    
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID du reflet:'
+                                        TextInput:
+                                            id:text1_salle
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Date du reflet:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_salle
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:78,0,0,47
+                                        MDIconButton:
+                                            icon:"calendar" 
+                                            icon_size:18
+                                            on_release:app.Date1()
+                                    
+                                    MDBoxLayout: 
+                                        padding:0,0,0,53
+                                        spacing:12  
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Heure du reflet:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_salle
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:78,0,0,100
+                                        MDIconButton:
+                                            icon:"clock" 
+                                            icon_size:18
+                                            on_release:app.Time1()
+                                    
+                                    
+                                    
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,173
+                                    MDBoxLayout:
+                                        orientation: 'vertical'
+                                        spacing:16
+                                        padding:0,0,0,45
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Nombre de patients en attente:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_salle
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,45
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Statut des patients:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_salle
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:16
+                                        padding:0,0,0,35
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Notes ou remarques supplémentaires:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6_salle
+                                            font_size:11
+                                            height: dp(25)
+
+                        
+                                
+#---------------------------------------------------------------------------------
+#---------------------------------------screen5---------------------------------------------------
+                Screen:
+                    id:display_presc_cases
+                    name:'display_presc_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(40,280,0,10)
+                            spacing: '70'
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:self.minimum_width
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:20
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55   
+                                    MDBoxLayout:
+                                        padding:0,0,0,50
+                                        spacing:12
+                                        orientation: 'vertical'    
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID de la prescription:'
+                                        TextInput:
+                                            id:text1_presc
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,50
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'PatientNumber:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_presc
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('idpatientrdv')
+
+                                    MDBoxLayout: 
+                                        padding:0,0,0,35
+                                        spacing:18  
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Médicaments prescrits:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_presc
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('med')
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,35
+                                        orientation: 'vertical'
+                                        spacing:12
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Posologie:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_presc
+                                            font_size:11
+                                            height: dp(25)
+
+                                    
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,55
+                                    MDBoxLayout:
+                                        padding:0,0,0,50
+                                        spacing:18
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Durée de la prescription:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_presc
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:18
+                                        padding:0,0,0,35
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Statut de la prescription:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6_presc
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,20
+                                        size_hint:1,0.9
+                                        spacing:18
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Notes supplémentaires:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7_presc
+                                            font_size:11
+                                            height: dp(25)
+
+#-------------------------------------------------------------------------------------
+#------------------------------------screen6-----------------------------------------
+                Screen:
+                    id:display_actes_cases
+                    name:'display_actes_cases'
+                    BoxLayout:
+                        orientation:"vertical"
+                        padding:(40,10,0,45)
+                        spacing: '70'
+                        size_hint_y:None
+                        height:self.minimum_height
+                        width:self.minimum_width
+                        MDBoxLayout:
+                            orientation: 'horizontal'
+                            spacing:20
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                spacing:55   
+                                MDBoxLayout:
+                                    spacing:12
+                                    orientation: 'vertical'    
+                                    MDLabel:
+                                        font_size:13
+                                        bold:True
+                                        text: "ID de l'acte:"
+                                    TextInput:
+                                        id:text1_actes
+                                        size_hint: (0.7,None)
+                                        multiline:False
+                                        font_size:11
+                                        height: dp(25)
+
+                                MDBoxLayout: 
+                                    padding:0,0,0,0
+                                    spacing:12  
+                                    orientation: 'vertical'
+                                    MDLabel:
+                                        font_size:13
+                                        bold:True
+                                        text: "Coût de l'acte:"
+                                    TextInput:
+                                        size_hint: (0.7,None)
+                                        multiline:False
+                                        id:text4_actes
+                                        font_size:11
+                                        height: dp(25)
+
+                                
+                                
+                                
+                                
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                spacing:55
+                                padding:0,0,0,55
+                                MDBoxLayout:
+                                    spacing:12
+                                    orientation: 'vertical'
+                                    MDLabel:
+                                        font_size:13
+                                        bold:True
+                                        text: "Nom de l'acte:"
+                                    TextInput:
+                                        size_hint: (0.7,None)
+                                        multiline:False
+                                        id:text2_actes
+                                        font_size:11
+                                        height: dp(25)
+
+#---------------------------------------------------------------------------------
+#-----------------------------------screen7---------------------------------------
+                Screen:
+                    id:display_med_cases
+                    name:'display_med_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(40,300,0,10)
+                            spacing: '70'
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:self.minimum_width
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:20
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55   
+                                    MDBoxLayout:
+                                        padding:0,0,0,60
+                                        spacing:12
+                                        orientation: 'vertical'    
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'ID du médicament:'
+                                        TextInput:
+                                            id:text1_med
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,60
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Nom du médicament:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_med
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout: 
+                                        padding:0,0,0,50
+                                        spacing:16  
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Description du médicament:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_med
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,35
+                                        orientation: 'vertical'
+                                        spacing:16
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Dosage/forme du médicament:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_med
+                                            font_size:11
+                                            height: dp(25)
+
+                                    
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,59
+                                    MDBoxLayout:
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Stock disponible:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_med
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Fournisseur:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6_med
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        size_hint:1,0.9
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: "Date d'expiration:"
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7_med
+                                            font_size:11
+                                            height: dp(25)
+
+
+                                    MDBoxLayout:
+                                        padding:78,0,0,47
+                                        MDIconButton:
+                                            icon:"calendar" 
+                                            icon_size:18
+                                            on_release:app.Date1()
+#----------------------------------------------------------------------------------
+#---------------------------------screen8------------------------------------------
+                Screen:
+                    id:display_paiement_cases
+                    name:'display_paiement_cases'
+                    ScrollView:
+                        bar_width: 0
+                        size:self.size
+                        do_scroll_x:True
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding:(10,375,0,0)
+                            spacing: '70'
+                            size_hint_x:None
+                            size_hint_y:None
+                            height:self.minimum_height
+                            width:400
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                spacing:-46
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,55
+                                    size_hint_x:None
+                                    width:200
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'ID_Transaction:'
+                                        TextInput:
+                                            id:text1_p
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'ID_Patient:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text2_p
+                                            font_size:11
+                                            height: dp(25)
+                                            on_focus:app.choix('idpatientrdv')
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'ID_Acte:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text3_p
+                                            font_size:11
+                                            height: dp(25)
+                                            on_text: app.check_inputsy()
+                                            on_focus:app.choix('idacte')
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Seance:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text10_p
+                                            font_size:11
+                                            height: dp(25)
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        orientation: 'vertical'
+                                        spacing:10
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Montant payé:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text4_p
+                                            font_size:11
+                                            height: dp(25)
+                                            on_text: app.check_inputsy()
+
+
+
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    spacing:55
+                                    padding:0,0,0,0
+                                    size_hint_x:None
+                                    width:200
+                                    MDBoxLayout:
+                                        padding:0,0,0,40
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Date de la transaction:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text6_p
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:108,0,0,86
+                                        MDIconButton:
+                                            icon:"calendar"
+                                            icon_size:18
+                                            on_release:app.Date1()
+                                    MDBoxLayout:
+                                        padding:0,0,0,95
+                                        size_hint:1,0.9
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Mode de paiement:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text7_p
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,95
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Statut de la transaction:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text8_p
+                                            font_size:11
+                                            height: dp(25)
+
+                                    MDBoxLayout:
+                                        padding:0,0,0,95
+                                        spacing:12
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:12
+                                            bold:True
+                                            text: 'Description de la transaction:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text9_p
+                                            font_size:11
+                                            height: dp(25)
+                                    MDBoxLayout:
+                                        padding:0,0,0,95
+                                        spacing:10
+                                        orientation: 'vertical'
+                                        MDLabel:
+                                            font_size:13
+                                            bold:True
+                                            text: 'Montant reste a payer:'
+                                        TextInput:
+                                            size_hint: (0.7,None)
+                                            multiline:False
+                                            id:text5_p
+                                            font_size:11
+                                            height: dp(25)
+
+
+#----------------------------------------------------------------------------------------------------
+
+#---------------------------------------tables-------------------------------------------------------
+        MDBoxLayout:
+            size_hint:1,0.33
+            #md_bg_color:0,255,255,1
+            pos_hint: {'center_x': 0.5,'center_y': 0.215}
+            Screen:
+                ScrollView:
+                    #do_scroll_x:True
+                    do_scroll_y:True
+                    size:self.size
+                    BoxLayout:
+                        orientation:"vertical"
+                        padding:(0,40,0,0)
+                        #spacing: '70'
+                        #size_hint_y:None
+                        #height:8000#self.minimum_height
+                        #width:8000#self.minimum_width
+                        #size_hint:None,None
+                        ScreenManager:
+                            id:scm
+                            Screen:
+                                id:display_patients
+                                name:'display_patients'
+                            Screen:
+                                id:display_rendez_vous
+                                name:'display_rendez_vous'
+                            Screen:
+                                id:display_visite
+                                name:'display_visite'
+                            Screen:
+                                id:display_salle
+                                name:'display_salle'
+                            Screen:
+                                id:display_presc
+                                name:'display_presc'
+                            Screen:
+                                id:display_actes
+                                name:'display_actes'
+                            Screen:
+                                id:display_med
+                                name:'display_med'
+                            Screen:
+                                id:display_paiement
+                                name:'display_paiement'
+#------------------------------------------------------------------------------------
+
+#-------------------------------------bottom bar-------------------------------------
+                
+        MDNavigationDrawer:
+            width:240
+            orientation:"vertical"
+            id:na
+            md_bg_color:51/255,255/255,51/255,1
+            size_hint:1,0.3
+            opening_time:0.1
+            closing_time:0.1
+            radius:20,2000,20,2000
+            Screen:
+                MDIcon:
+                    icon:"account-box-outline"
+                    pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                    font_size:80
+                MDLabel:
+                    text:'Admin'
+                    pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                    bold:True
+                    font_size:24
+                MDFillRoundFlatIconButton:
+                    icon:"logout"
+                    text:"déconnecter"
+                    pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                    on_release:
+                        app.deconnecter()
+                        na.set_state("close")
+        MDBoxLayout:
+            md_bg_color: 0,255,255,1
+            size_hint: 1, 0.1
+            pos_hint: {'center_x': 0.5,'center_y': 0}
+            radius:15
+        MDIconButton:
+            icon:"step-backward"
+            pos_hint:{'center_x':0.2,'center_y':0.025}
+            icon_size:"25sp"
+            on_release:app.root.current='home'
+
+        MDIconButton:
+            icon:"logout"
+            pos_hint:{'center_x':0.8,'center_y':0.025}
+            icon_size:"25sp"
+            on_release:na.set_state("open")
+        MDIconButton:
+            icon:"home"
+            pos_hint:{'center_x':0.5,'center_y':0.025}
+            icon_size:"25sp"
+            on_release:app.root.current='home'
+#-----------------------------------------------------------------------------------
+#--------------------------les catre buttons----------------------------------------
+        MDBoxLayout:
+            orientation:"horizontal"
+            #md_bg_color:0,255,255,1
+            pos_hint: {'center_x': 0.47,'center_y': 0.5}
+            size_hint:0.9,0.04
+            spacing:8
+            MDRaisedButton:
+                font_size:12
+                size_hint:0.08,1
+                text:"Ajouter"
+                md_bg_color:0,255,0,1
+                text_color:0,0,0,1
+                on_release:app.add_table()
+            MDRaisedButton:
+                font_size:12
+                size_hint:0.08,1
+                text:"Supprimer"
+                md_bg_color:255/255,0/255,0/255,1
+                text_color:0,0,0,1
+                on_release:app.delete_table()
+            MDRaisedButton:
+                id:modife
+                font_size:12
+                md_bg_color:255/255,255/255,0/255,1
+                size_hint:0.08,1
+                text:"Modifier"
+                text_color:0,0,0,1
+                on_release:app.update_table()
+            MDRaisedButton:
+                font_size:12
+                size_hint:0.08,1
+                text:"Enregistrer"
+                text_color:0,0,0,1
+                on_release:app.on_save_button_release()
+        MDTextField:
+            id:rech
+            hint_text:"Rechercher"
+            mode:"rectangle"
+            icon_left: "clipboard-search-outline"
+            font_size:11
+            pos_hint: {'center_x': 0.27,'center_y': 0.43}
+            size_hint:None,None
+            size:150,10
+            on_text:app.rechercher(app.change)
+            disabled:True
+        MDLabel:
+            id:lp
+            text:"Listes des patients:"
+            pos_hint: {'center_x': 0.3,'center_y': 0.35}
+            size_hint:0.5,0.1
+            bold:True
+            font_size:12
+        MDRaisedButton:
+            id:rechpar
+            text:"Rechercher par..."
+            size_hint:None,None
+            size:90,10
+
+            pos_hint: {'center_x': 0.7,'center_y': 0.42}
+            on_release:app.show_dialogs()
+
+#--------------------------------------------------------------------------------------
+#-------------------------------------------menu------------------------------------------
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id: nav
+        md_bg_color:51/255,255/255,51/255,1
+        Screen:
+            MDBoxLayout:
+                padding:0,0,0,30
+                Image:
+                    size_hint:0.15,0.15
+                    source:"Untitled design-modified.png"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.85}
+            MDBoxLayout:
+                padding:0,0,0,100
+                MDLabel:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.7}
+                    bold:True
+                    text:"Dentiste Amana"
+                    halign:"center"
+                    font_size:25
+            MDBoxLayout:
+                pos_hint: {'center_x': 0.5,'center_y': 0.35}
+                id:b1
+                orientation: 'vertical'
+                padding:10,0,10,80
+                spacing:7
+                size_hint_x:1
+                size_hint_y:0.7
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    id: user_toggle
+                    text: 'Patients'
+                    size_hint_y: .2
+                    on_release:
+                        app.switch_to_screen('display_patients')
+                        nav.set_state("close")
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    id: products_toggle
+                    text: 'Rendez-vous'
+                    size_hint_y: .2
+                    background_color:0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_rendez_vous')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_y:None
+                    size_y:20
+                    bold:True
+                    id: analysis_toggle
+                    text: 'Visite de la journee'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_visites')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    id: analysis_toggle
+                    text: "Reflet de la salle d'attente"
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_salle')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    id: analysis_toggle
+                    text: 'Prescriptions'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_presc')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    text: 'Actes'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_actes')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    text: 'Medicaments'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        app.switch_to_screen('display_med')
+                        nav.set_state("close")
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    text: 'Paiements'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        nav.set_state("close")
+                        app.switch_to_screen('display_paiement')
+                ToggleButton:
+                    size_hint_x:1
+                    bold:True
+                    text: 'Statistiques'
+                    size_hint_y: .2
+                    background_color: 0,0,1,1
+                    background_normal: ''
+                    group:'changesc'
+                    on_release:
+                        nav.set_state("close")
+                        app.stats()
+
+    MDIconButton:
+        icon:"menu"
+        id:re
+        pos_hint: {'center_x': 0.09,'center_y': 0.95}
+        on_press:
+            nav.set_state("open")
+#-----------------------------------------------------------------------
+<LeftBar@BoxLayout>:
+    canvas.before:
+        Color:
+            rgba: 128/255,0/255,128/255,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<LeftIcon@IconLeftWidget>:
+    theme_text_color: "Custom"
+    text_color: 0,.8,0,1
+
+<Profile@FloatLayout>:
+    canvas.before:
+        Ellipse:
+            source: "mwas.jpg"
+            size: 50, 50
+            pos: self.pos
+
+            
+            
+            
+
+    
+
+            
+    
+
+                
+        

@@ -1,0 +1,200 @@
+MDScreen:
+    name:'bvn'
+    md_bg_color:240/255,240/255,240/255,10
+    ScrollView:
+        size:self.size
+        BoxLayout:
+            orientation:"vertical"
+            padding:(30,120,30,100)
+            spacing: '90'
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            Screen:
+                size:40,2500
+                size_hint_y:None
+                MDBoxLayout:
+                    size_hint:None,None
+                    height:1
+                    orientation: 'horizontal'
+                    pos_hint: {'center_x': 0.35,'center_y': 1}
+                    MDBoxLayout:
+                        size_hint: None,None
+                        radius:100
+                        pos_hint: {'center_x': 0.25,'center_y': 0.85}
+                        canvas.after:
+                            Color:
+                                rgba: 0.51, 255, 0.51, 1
+                            Line:
+                                width: 2  
+                                ellipse: self.x, self.y, self.width, self.height
+                        Image:
+                            source:"Untitled design-modified.png"
+                            size_hint:0.8,0.8
+                            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                    MDLabel:
+                        text:'  Dentiste\n  Amana'
+                        pos_hint:{'center_x':.65,'center_y':8}
+                        halign:'center'
+                        theme_text_color:'Custom'
+                        text_color:0,0,0,10
+                        font_size:'20sp'
+                        size_hint:None,None
+                        width:100
+                        height:100
+                        bold:True
+                MDBoxLayout:
+                    MDProgressBar:
+                        orientation:"horizontal"
+                        pos_hint:{'center_x':0.5,'center_y':0.96}
+                        size_hint:None,None#0.8,0.005
+                        value: 100
+                        width:300
+                        height: dp(3)
+                        color: app.theme_cls.accent_color
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.94}
+                    
+                    MDLabel:
+                        text: 'Bienvenue:'
+                        bold:True
+                        pos_hint: {'center_x': .5}
+                        halign:"center"
+                        font_size:24
+            
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.91}
+                    orientation: 'vertical'
+                    MDLabel:
+                        bold:True
+                        font_size:14
+                        text: "Bienvenue dans l'application mobile du notre cabinet dentaire. "
+                        pos_hint: {'center_x': .5}
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.89}
+                    orientation: 'vertical'
+                    MDLabel:
+                        bold:True
+                        font_size:14
+                        id:cher
+                        text: 'Cher(e) [Nom du patient],'
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.86}
+                    orientation: 'vertical'
+                    MDLabel:
+                        bold:True
+                        font_size:14
+                        text: "Nous sommes ravis de vous accueillir dans notre application mobile du cabinet dentaire. Votre inscription a été effectuée avec succès et nous sommes impatients de vous offrir nos services de soins dentaires de qualité."
+
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.83}
+                    orientation: 'vertical'
+                    MDLabel:
+                        bold:True
+                        font_size:14
+                        text: "L'application mobile vous permettra de bénéficier des fonctionnalités suivantes :"
+                MDBoxLayout:
+                    size_hint_y:0.14
+                    pos_hint: {'center_x': 0.5,'center_y': .75}
+                    orientation: 'vertical'
+                    spacing:0
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        id:date
+                        text: '-Prise de rendez-vous en ligne : Vous pourrez facilement planifier vos rendez-vous chez nos dentistes qualifiés en quelques clics.'
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        id: heu
+                        text: '-Rappels de rendez-vous : Vous recevrez des rappels automatisés pour ne pas oublier vos rendez-vous.'
+
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        text: '-Communication directe avec le cabinet : Vous pourrez nous contacter facilement pour poser des questions, demander des conseils ou obtenir des informations supplémentaires.'
+
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        text:'-Notifications personnalisées : Vous serez informé(e) des promotions spéciales, des nouveaux services et des actualités importantes du cabinet.'
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.67}
+                    orientation: 'vertical'
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        text: "Cordialement," 
+
+
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.65}
+                    orientation:'vertical'
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        text:'Cabinet dentaire:Dentiste Amana'
+                MDBoxLayout:
+                    pos_hint: {'center_x': 0.5,'center_y': 0.63}
+                    orientation:'vertical'
+                    MDLabel:
+                        font_size:14
+                        bold:True
+                        text:'Telephone:0589095624'
+                MDBoxLayout:
+                    padding:0,0,0,1200
+                    MDProgressBar:
+                        orientation:"horizontal"
+                        pos_hint:{'center_x':0.5,'center_y':.26}
+                        size_hint:None,None#0.8,0.005
+                        value: 100
+                        width:300
+                        height: dp(3)
+                        color: app.theme_cls.accent_color
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='Notification'
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:app.root.current='home'

@@ -1,0 +1,136 @@
+<FixerApp>:
+    name:'Fixer_RDV1'
+    MDFloatLayout:
+        md_bg_color: 240/255,240/255,240/255,1
+        MDBoxLayout:
+            md_bg_color: 0/255,255/255,255/255,1
+            size_hint: 1, 0.1
+            pos_hint: {'center_x': 0.5,'center_y': 1}
+            radius:15
+        MDBoxLayout:
+            size_hint: 0.3, 0.17
+            radius:100
+            pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            canvas.after:
+                Color:
+                    rgba: 51/255,255/255,51/255,1
+                Line:
+                    width: 2  
+                    ellipse: self.x, self.y, self.width, self.height
+            Image:
+                source:"Untitled design-modified.png"
+                size_hint:.8,.8
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        MDIconButton:
+            id:calendar
+            icon:'calendar'
+            size_hint:(None,None)
+            pos_hint:{'center_x':.85,'center_y':.59}
+            on_release:root.Date()
+        MDLabel:
+            id:date_label
+            text:'Veuillez entrer la date du rendez-vous :'
+            pos_hint:{'center_x':.45,'center_y':.66}
+            bold:True
+            halign:"center"
+            font_size:15
+            #font_name:'Poppins-Medium (1).ttf'
+        MDTextField:
+            id:fdate
+            hint_text: "Date"
+            mode: "rectangle"
+            size_hint:0.7,0.09  
+            pos_hint:{'center_x':.45,'center_y':.6}
+        MDIconButton:
+            id:clock
+            icon:'clock'
+            size_hint:(None,None)
+            pos_hint:{'center_x':.85,'center_y':.43}
+            on_release:root.Time()
+        MDLabel:
+            text:"Veuillez entrer l'heure du rendez-vous :"
+            pos_hint:{'center_x':.45,'center_y':.5}
+            bold:True
+            font_size:15
+            halign:"center"
+            #font_name:'Poppins-Medium (1).ttf'
+        MDTextField:
+            id:ftime
+            hint_text: "Heure"
+            mode: "rectangle"
+            size_hint:0.7,0.09  
+            pos_hint:{'center_x':.45,'center_y':.44}
+        MDFillRoundFlatIconButton:
+            id:erd
+            text: 'Enregistrer'
+            icon_size:24
+            font_size:20
+            icon:"content-save-check-outline"
+            pos_hint:{'center_x':.5,'center_y':.33}
+            on_release:root.enregistrer()
+        MDBoxLayout:
+            size_hint: 0.9, 0.2
+            radius:100
+            padding:
+            pos_hint: {'center_x': 0.5,'center_y': 0.16}
+            canvas.after:
+                Color:
+                    rgba: 51/255,255/255,51/255,1
+                Line:
+                    width: 2  
+                    rectangle: self.x, self.y, self.width, self.height
+            MDLabel:
+                id:change4
+                halign:'center'
+                text:"Veuillez noter que vous ne pourrez pas prendre un autre rendez-vous avant d'avoir honoré ou annulé celui-ci dans la page dédiée à la gestion des rendez-vous."
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    root.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Fixer_RDV_back()
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Fixer_RDV_back()
+
+
+
+

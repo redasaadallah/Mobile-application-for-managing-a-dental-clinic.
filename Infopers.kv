@@ -1,0 +1,139 @@
+<ActionApp>:
+    md_bg_color: 240/255,240/255,240/255,1
+    MDBoxLayout:
+        md_bg_color: 0/255,255/255,255/255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 1}
+        radius:15
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        size_hint: 0.8, 0.15
+        pos_hint: {'center_x': 0.5,'center_y': 0.85}
+        MDIcon:
+            icon:"account-circle-outline"
+            font_size:62
+            pos_hint: {'center_x': 0.5,'center_y': 0}
+        MDLabel:
+            text: "Informations personnelles"
+            bold:True
+            font_size:20
+            halign:"center"       
+    MDBoxLayout:
+        id:wq
+        orientation:'vertical'
+        md_bg_color: 0/255,255/255,0/255,1
+        size_hint: 0.8,0.6 
+        pos_hint: {'center_x': 0.5,'center_y': 0.45}
+        radius:0,60,0,60 
+        
+        MDLabel:
+            id:nom
+            text:"Nom: "
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:prenom
+            text:"Prenom: "
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:dn
+            text: "Date de naissance: "
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:tel
+            text:"Telephone: "
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:adr
+            text:"Adresse: "
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:ema
+            text:'Email: '
+            halign:"center"
+            bold:True
+        MDLabel:
+            id:ass
+            text:'Assurance: '
+            halign:"center"
+            bold:True
+        #MDLabel:
+            #id:CIN
+            #text:'CIN: '
+            #halign:"center"
+            #bold:True
+        #MDLabel:
+            #id:motpass
+            #text:'Mot de passe: '
+            #halign:"center"
+            #bold:True
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDRectangleFlatIconButton:
+        text:"Modifier"
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        icon:"account-edit"
+        font_style:"H6"
+        font_size:18
+        border_width:4
+        on_release:
+            root.enr()
+            app.root.transition.duration=0
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    root.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Mes_infos_perso_back()
+
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Mes_infos_perso_back()
+        
+
+        

@@ -1,0 +1,176 @@
+<RDVApp>:
+    md_bg_color: 240/255,240/255,240/255,1
+    name:'Mes_RDV'
+    MDFloatLayout:
+        id:mrdv
+        MDBoxLayout:
+            md_bg_color:0/255,255/255,255/255,1
+            size_hint: 1, 0.1
+            pos_hint: {'center_x': 0.5,'center_y': 1}
+            radius:15
+        MDBoxLayout:
+            size_hint: 0.3, 0.17
+            radius:100
+            pos_hint: {'center_x': 0.5,'center_y': 0.84}
+            canvas.after:
+                Color:
+                    rgba: 0.51, 255, 0.51, 1
+                Line:
+                    width: 2  
+                    ellipse: self.x, self.y, self.width, self.height
+            Image:
+                source:"Untitled design-modified.png"
+                size_hint:.8,.8
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        MDRectangleFlatIconButton:
+            id:sp
+            text:"Annuler"
+            icon:'trash-can'
+            pos_hint:{'center_x':0.7,'center_y':.3}
+            on_release:root.supp_RDV()
+        MDRectangleFlatIconButton:
+            id:md
+            text:"Modifier"
+            icon:'pencil'
+            pos_hint:{'center_x':0.3,'center_y':.3}
+            on_release:root.show_modification()
+        MDBoxLayout:
+            padding:'24dp',0,'24dp',0
+            size_hint_y:0.25
+            size_hint_x:1
+            pos_hint:{'center_x':.5,'center_y':.5}
+            orientation:'horizontal'
+            MDCard:
+                id:pr
+                size_hint_y:1
+                size_hint_x:0.75
+                border:3
+                md_bg_color:51/255,255/255,51/255,1
+                orientation:'horizontal'
+                spacing:'10dp'
+                radius:12
+                padding:'20dp','20dp','20dp','20dp'
+                elevation:6
+                pos_hint:{'center_x':.5,'center_y':.5}
+                radius:10,60,10,60
+                MDBoxLayout:
+                    id:box1
+                    size_hint_y:1
+                    size_hint_x:0.9
+                    padding:'5dp','15dp','15dp','5dp'
+                    spacing:'5dp'
+                    pos_hint:{'center_x':0.55,'center_y':.5}
+                    orientation:'vertical'
+                    MDLabel:
+                        id:op
+                        text:'ID: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+                    MDLabel:
+                        id:moddate
+                        text:'Date: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+
+                    MDLabel:
+                        id:modclock
+                        text:'Heure: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+        MDLabel:
+            text:'Mon Rendez-vous '
+            font_style:'H4'
+            halign:"center"
+            font_size:'30sp'
+            bold:True
+            pos_hint:{'center_x':.5,'center_y':.7}              
+    MDNavigationDrawer:
+        width:240
+        orientation:"vertical"
+        id:na
+        md_bg_color:51/255,255/255,51/255,1
+        size_hint:1,0.3
+        opening_time:0.1
+        closing_time:0.1
+        radius:20,2000,20,2000
+        Screen:
+            MDIcon:
+                icon:"account-box-outline"
+                pos_hint: {'center_x': 0.2,'center_y': 0.7}
+                font_size:80
+            MDLabel:
+                id:flname
+                pos_hint: {'center_x': 0.85,'center_y': 0.7}
+                bold:True
+                font_size:24
+            MDFillRoundFlatIconButton:
+                icon:"logout"
+                text:"déconnecter"
+                pos_hint: {'center_x': 0.55,'center_y': 0.4}
+                on_release:
+                    app.deconnecter()
+                    na.set_state("close")
+    MDBoxLayout:
+        md_bg_color: 0,255,255,1
+        size_hint: 1, 0.1
+        pos_hint: {'center_x': 0.5,'center_y': 0}
+        radius:15
+    MDIconButton:
+        icon:"step-backward"
+        pos_hint:{'center_x':0.2,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Mes_RDV_back()
+    MDIconButton:
+        icon:"logout"
+        pos_hint:{'center_x':0.8,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:na.set_state("open")
+    MDIconButton:
+        icon:"home"
+        pos_hint:{'center_x':0.5,'center_y':0.025}
+        icon_size:"25sp"
+        on_release:root.Mes_RDV_back()
+<Dialogue_modifer>
+    orientation:'vertical'
+    spacing:'25dp'
+    height:'125dp'
+    size_hint:1,None
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: (0.8, None)
+        height: dp(100)
+        pos_hint: {'center_x': 0.39, 'center_y': 0.7}
+        spacing:'0dp'
+        MDBoxLayout:
+            orientation:'horizontal'
+            MDTextField:
+                id:mdf_date
+                hint_text: 'Entrer une date'
+                size_hint_y: None
+                height: dp(50)
+            MDIconButton:
+                icon:'calendar'
+                on_release:root.show_date_picker()
+        MDBoxLayout:
+            orientation:'horizontal'
+            MDTextField:
+                id:mdf_clock
+                hint_text: "Entrer l'heure"
+                size_hint_y: None
+                height: dp(50)
+            MDIconButton:
+                icon:'clock'
+                on_release:root.Time_modification()
+    BoxLayout:
+        orientation:'horizontal'
+        spacing:'5dp'
+        MDRaisedButton:
+            text:'Enregistrer'
+            on_release:root.Enregistrer_modification()
+        MDRaisedButton:
+            text:'Annuler'
+            on_release:root.on_cancell()
+        

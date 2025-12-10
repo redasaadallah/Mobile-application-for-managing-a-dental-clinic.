@@ -1,0 +1,88 @@
+MDScreen:
+    name:'Mes_RDV'
+    MDFloatLayout:
+        md_bg_color:128/255,0/255,128/255,1
+        MDIconButton:
+            icon:'chevron-left'
+            user_font_size:'35sp'
+            pos_hint:{'center_y':.95}
+            on_release:app.RDV_back()
+        MDLabel:
+            text:'Back'
+            font_size:'18sp'
+            font_name:'Poppins-SemiBold.ttf'
+            pos_hint:{'center_x':.55,'center_y':.949}
+        MDIcon:
+            icon:'trash-can'
+            pos_hint:{'center_x':0.97,'center_y':.949}
+
+
+        MDBoxLayout:
+
+            padding:'24dp',0,'24dp',0
+            size_hint_y:0.25
+            size_hint_x:1
+            pos_hint:{'center_x':.5,'center_y':.689}
+            orientation:'horizontal'
+
+
+            MDCard:
+
+                size_hint_y:1
+                size_hint_x:0.75
+                border:3
+                md_bg_color:128/255,0/255,128/255,1
+                orientation:'horizontal'
+                spacing:'10dp'
+                radius:12
+                padding:'20dp','20dp','20dp','20dp'
+                elevation:6
+                pos_hint:{'center_x':.5,'center_y':.5}
+
+                MDBoxLayout:
+                    size_hint_y:1
+                    size_hint_x:0.9
+                    padding:'5dp','15dp','15dp','5dp'
+                    spacing:'5dp'
+                    pos_hint:{'center_x':0.55,'center_y':.5}
+
+                    orientation:'vertical'
+                    MDLabel:
+                        text:'Mon Rendez-vous '
+                        font_style:'H4'
+                        font_size:'40sp'
+                        pos_hint:{'center_x':.8,'center_y':.4}
+
+
+                    MDLabel:
+                        text:'ID: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+
+
+                    MDLabel:
+                        text:'Date: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+
+                    MDLabel:
+                        text:'Heure: '
+                        font_style:'H4'
+                        font_size:'24sp'
+                        pos_hint:{'center_x':.51,'center_y':1}
+
+                MDBoxLayout:
+                    size_hint_y:1
+                    size_hint_x:0.10
+                    pos_hint:{'center_x':0.56,'center_y':.5}
+
+
+                    MDIconButton:
+                        icon:'pencil'
+                        pos_hint:{'center_x':.3,'center_y':.4}
+                        font_size:'90sp'
+
+
+
